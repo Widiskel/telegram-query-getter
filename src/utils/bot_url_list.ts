@@ -14,4 +14,9 @@ export const botUrlList = [
     bot: "BlumCryptoBot",
     url: "https://gateway.blum.codes/",
   },
+  //TAPSWAP
+  {
+    bot: "tapswap_mirror_bot",
+    url: "https://api.tapswap.ai/api/",
+  },
 ];
