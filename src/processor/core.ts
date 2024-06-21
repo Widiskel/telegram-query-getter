@@ -115,7 +115,7 @@ export class Core {
       const authUrl = webView.url;
 
       const type = await input.text(
-        "Select Query Result Type ?\n \n1. URI Component \n2. JSON String (DEFAULT)\n \nPlease select result type :"
+        "Select Query Result Type ?\n \n1. URI Component \n2. JSON String\n3. Init Params (DEFAULT)\n \nPlease select result type :"
       );
 
       const tgData = Helper.getTelegramQuery(authUrl, type);

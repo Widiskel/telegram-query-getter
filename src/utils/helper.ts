@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { parse, stringify } from "querystring";
 
 export class Helper {
   static sleep = (ms: number): Promise<void> => {
@@ -24,9 +25,29 @@ export class Helper {
 
     if (type == "1") {
       return param;
-    } else {
+    } else if (type == "2") {
       return this.decodeQueryString(param);
+    } else {
+      const newParam = this.decodeQueryString(param);
+      return this.jsonToInitParam(newParam);
     }
+  }
+
+  static jsonToInitParam(dataString: string): string {
+    const newData = parse(dataString);
+
+    if (newData.user) {
+      const userObject = JSON.parse(newData.user as string);
+      newData.user = encodeURIComponent(JSON.stringify(userObject));
+    }
+
+    const resultArray = [];
+    for (const [key, value] of Object.entries(newData)) {
+      resultArray.push(`${key}=${value}`);
+    }
+    const result = resultArray.join("&");
+
+    return result;
   }
 
   static decodeQueryString(encodedString: string): string {
