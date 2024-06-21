@@ -8,12 +8,14 @@ import { botUrlList } from "../utils/bot_url_list";
 
 export class Core {
   client: TelegramClient;
+  session: string;
   peer: EntityLike | Entity | any;
   bot: any;
   url: any;
 
-  constructor(client: TelegramClient) {
+  constructor(client: TelegramClient, session: string) {
     this.client = client;
+    this.session = session;
   }
 
   async mode() {
@@ -50,6 +52,7 @@ export class Core {
   }
 
   async resolvePeer() {
+    logger.info(`Session ${this.session} - Resolving Peer`);
     while (this.peer == undefined) {
       try {
         this.peer = await this.client.getEntity(this.bot);
@@ -73,6 +76,7 @@ export class Core {
 
   async process() {
     try {
+      logger.info(`Session ${this.session} - Processing`);
       if (await this.mode()) {
         this.bot = await input.text("Enter bot username you want to connect ?");
         this.url = await input.text(
@@ -96,6 +100,7 @@ export class Core {
       console.log("PEER INFO");
       console.log(`BOT    :  ${this.peer ? this.peer.username : "??"}`);
       console.log();
+      logger.info(`Session ${this.session} - Connecting to Webview`);
       const webView = await this.client.invoke(
         new Api.messages.RequestWebView({
           peer: this.peer,
@@ -105,13 +110,17 @@ export class Core {
           platform: "android",
         })
       );
+      logger.info(`Session ${this.session} - Webview Connected`);
 
       const authUrl = webView.url;
+      const tgData = Helper.getTelegramQuery(authUrl);
       console.log();
       console.log("WebView URL:", authUrl);
       console.log();
-      console.log("TG Web App Data : " + Helper.getTelegramQuery(authUrl));
+      console.log("TG Web App Data : " + tgData);
       console.log();
+      logger.info(`Session ${this.session} Data - ${tgData}`);
+      logger.info(`Session ${this.session} - Complete`);
       await this.client.disconnect();
     } catch (error) {
       console.error("Error during process execution:", error);

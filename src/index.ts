@@ -4,6 +4,7 @@ import input from "input"; // npm i input
 import { Config } from "./config";
 import { Core } from "./processor/core";
 import { Helper } from "./utils/helper";
+import logger from "./utils/logger";
 
 let storeSession;
 let sessionName: string;
@@ -69,9 +70,12 @@ async function onBoarding() {
 }
 
 (async () => {
+  sessionName = "sessions";
   try {
-    sessionName = "sessions";
+    logger.info(`BOT STARTED`);
     await onBoarding();
+    logger.info(`Using Session : ${sessionName}`);
+
     storeSession = new StoreSession(sessionName);
     const client = new TelegramClient(
       storeSession,
@@ -91,10 +95,12 @@ async function onBoarding() {
       onError: (err) => console.log(err),
     });
     console.log("Connected.");
+    logger.info(`Session ${sessionName} - Connected`);
     storeSession.save();
 
-    new Core(client).process();
+    new Core(client, sessionName).process();
   } catch (error) {
     console.log(error);
+    logger.error(`Session ${sessionName} Error - ${error}`);
   }
 })();
