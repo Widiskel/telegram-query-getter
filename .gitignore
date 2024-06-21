@@ -2,3 +2,4 @@ node_modules
 dist/*
 sessions/*
 sessions2/*
+log/*
