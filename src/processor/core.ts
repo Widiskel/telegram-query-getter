@@ -26,7 +26,8 @@ export class Core {
     } else if (mode == 2) {
       return false;
     } else {
-      throw Error("Invalid input");
+      console.error("Invalid choice, Please try again");
+      await this.mode();
     }
   }
 
@@ -43,7 +44,8 @@ export class Core {
       this.bot = chosenBot.bot;
       this.url = chosenBot.url;
     } else {
-      throw Error("Invalid choice. Please try again.");
+      console.error("Invalid choice. Please try again.");
+      await this.botList();
     }
   }
 

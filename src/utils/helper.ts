@@ -69,9 +69,28 @@ export class Helper {
       const files = fs.readdirSync(path.resolve(sessionName));
       console.log("Deleting Sessions...");
       files.forEach((file) => {
-        fs.unlinkSync(path.join(path.resolve("sessions"), file));
+        fs.rm(
+          `${path.join(path.resolve("sessions"), file)}`,
+          { recursive: true },
+          (err) => {
+            if (err) throw err;
+          }
+        );
       });
       console.info("Sessions reset successfully");
+    } catch (error) {
+      throw Error(`Error deleting session files: ${error},`);
+    }
+  }
+
+  static createDir(dirName: string) {
+    try {
+      const dirPath = `sessions/${dirName}`;
+      console.log(dirPath);
+      fs.mkdir(dirPath, { recursive: true }, (err) => {
+        if (err) throw err;
+      });
+      return dirPath;
     } catch (error) {
       throw Error(`Error deleting session files: ${error},`);
     }

@@ -8,17 +8,51 @@ import { Helper } from "./utils/helper";
 let storeSession;
 let sessionName: string;
 
+async function sessionCreation() {
+  const sessionList = Helper.getSession("sessions");
+  let ctx = "Your session List :\n \n";
+
+  for (const sess of sessionList) {
+    ctx += `${sessionList.indexOf(sess) + 1}. ${sess}\n`;
+  }
+  if (sessionList.length == 0) {
+    ctx += "<empty> \n \nPlease enter Session Name :";
+  } else {
+    ctx +=
+      "\n \nYou alreay have sessions, cancel(CTRL+C) or create new Session :";
+  }
+
+  const newSession = await input.text(ctx);
+  sessionName = Helper.createDir(newSession);
+}
+async function sessionSelection() {
+  const sessionList = Helper.getSession("sessions");
+  let ctx = "Your session List :\n \n";
+
+  for (const sess of sessionList) {
+    ctx += `${sessionList.indexOf(sess) + 1}. ${sess}\n`;
+  }
+
+  ctx += "\n \nPlease select Session :";
+
+  const newSession = await input.text(ctx);
+  const selectedSession = sessionList[parseInt(newSession) - 1];
+
+  if (selectedSession) {
+    sessionName = "sessions/" + selectedSession;
+    console.info(`Using sessions ${selectedSession}`);
+  } else {
+    console.error("Invalid choice. Please try again.");
+    await sessionSelection();
+  }
+}
+
 async function onBoarding() {
   const choice = await input.text(
     "Welcome to Telegram Query Getter \nBy : Widiskel \n \nLets getting started. \n1. Create Session. \n2. Reset Sessions \n3. Get Query \n \nInput your choice :"
   );
   if (choice == 1) {
-    if (Helper.getSession(sessionName)?.length != 0) {
-      console.info(
-        "You already have sessions created, please reset your sessions first"
-      );
-      await onBoarding();
-    }
+    await sessionCreation();
   } else if (choice == 2) {
     Helper.resetSession(sessionName);
     await onBoarding();
@@ -26,6 +60,8 @@ async function onBoarding() {
     if (Helper.getSession(sessionName)?.length == 0) {
       console.info("You don't have any sessions, please create first");
       await onBoarding();
+    } else {
+      await sessionSelection();
     }
   } else {
     throw Error("Invalid input");
@@ -54,7 +90,7 @@ async function onBoarding() {
         await input.text("Enter your Telegram Verification Code ?"),
       onError: (err) => console.log(err),
     });
-    console.log("You should now be connected.");
+    console.log("Connected.");
     storeSession.save();
 
     new Core(client).process();
