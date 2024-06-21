@@ -113,7 +113,12 @@ export class Core {
       logger.info(`Session ${this.session} - Webview Connected`);
 
       const authUrl = webView.url;
-      const tgData = Helper.getTelegramQuery(authUrl);
+
+      const type = await input.text(
+        "Select Query Result Type ?\n \n1. URI Component \n2.JSON String (DEFAULT)\n \nPlease select result type :"
+      );
+
+      const tgData = Helper.getTelegramQuery(authUrl, type);
       console.log();
       console.log("WebView URL:", authUrl);
       console.log();

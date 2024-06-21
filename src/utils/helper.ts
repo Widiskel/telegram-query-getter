@@ -6,7 +6,7 @@ export class Helper {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
 
-  static getTelegramQuery(url: string) {
+  static getTelegramQuery(url: string, type: string) {
     const hashIndex = url.indexOf("#");
     if (hashIndex === -1) {
       throw new Error("No query string found in the URL.");
@@ -22,7 +22,11 @@ export class Helper {
       throw new Error("Param not found in the query string.");
     }
 
-    return this.decodeQueryString(param);
+    if (type == "1") {
+      return param;
+    } else {
+      return this.decodeQueryString(param);
+    }
   }
 
   static decodeQueryString(encodedString: string): string {
