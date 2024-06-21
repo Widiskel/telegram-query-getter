@@ -65,7 +65,8 @@ async function onBoarding() {
       await sessionSelection();
     }
   } else {
-    throw Error("Invalid input");
+    console.error("Invalid input, Please try again");
+    await onBoarding();
   }
 }
 
