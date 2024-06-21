@@ -190,3 +190,75 @@ ReferenceError: Helper is not defined
     at Generator.next (<anonymous>)
     at fulfilled (/Users/widiskel/Project/pixelfarm-bot/dist/processor/core.js:5:58)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:35:48 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:37:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:35:48 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:37:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:35:55 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:37:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:35:55 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:37:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:38:04 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:38:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:38:04 [[31merror[39m]: unhandledRejection: Your API ID or Hash cannot be empty or undefined
+Error: Your API ID or Hash cannot be empty or undefined
+    at new TelegramBaseClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/telegramBaseClient.js:62:19)
+    at new TelegramClient (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:69:9)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:25:20
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/widiskel/Project/telegram-query-getter/dist/index.js:4:12)
+    at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
+    at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:38:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
