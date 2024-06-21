@@ -7,7 +7,7 @@ export const botUrlList = [
   //METABOSS
   {
     bot: "metaboss_2024_bot",
-    url: "http://apiv2.metaboss.xyz:2000/game",
+    url: "https://apiv2.metaboss.xyz:2000/game",
   },
   //BLUM
   {
