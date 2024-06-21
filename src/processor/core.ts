@@ -105,8 +105,11 @@ export class Core {
       );
 
       const authUrl = webView.url;
+      console.log();
       console.log("WebView URL:", authUrl);
+      console.log();
       console.log("TG Web App Data : " + Helper.getTelegramQuery(authUrl));
+      console.log();
       await this.client.disconnect();
     } catch (error) {
       console.error("Error during process execution:", error);

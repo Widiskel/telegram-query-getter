@@ -22,7 +22,33 @@ export class Helper {
       throw new Error("Param not found in the query string.");
     }
 
-    return param;
+    return this.decodeQueryString(param);
+  }
+
+  static decodeQueryString(encodedString: string): string {
+    const decodedString = decodeURIComponent(encodedString);
+    const paramsArray = decodedString.split("&");
+    const paramsObject: { [key: string]: any } = {};
+
+    paramsArray.forEach((param) => {
+      const [key, value] = param.split("=");
+      if (key === "user") {
+        paramsObject[key] = JSON.parse(decodeURIComponent(value));
+      } else {
+        paramsObject[key] = value;
+      }
+    });
+
+    const resultArray: string[] = [];
+    for (const [key, value] of Object.entries(paramsObject)) {
+      if (key === "user") {
+        resultArray.push(`${key}=${JSON.stringify(value)}`);
+      } else {
+        resultArray.push(`${key}=${value}`);
+      }
+    }
+
+    return resultArray.join("&");
   }
 
   static getSession(sessionName: string) {

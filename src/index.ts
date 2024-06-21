@@ -34,7 +34,7 @@ async function onBoarding() {
 
 (async () => {
   try {
-    sessionName = "sessions2";
+    sessionName = "sessions";
     await onBoarding();
     storeSession = new StoreSession(sessionName);
     const client = new TelegramClient(
