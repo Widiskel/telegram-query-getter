@@ -18,7 +18,7 @@ export class Core {
 
   async mode() {
     const mode = await input.text(
-      "\nConnect Mode : \n1. Manual \n2. List \n\nInput your choice : "
+      "Connect Mode : \n1. Manual \n2. List \n\nInput your choice : "
     );
 
     if (mode == 1) {
@@ -31,7 +31,7 @@ export class Core {
   }
 
   async botList() {
-    let botOptions = "\nBot List:\n";
+    let botOptions = "Bot List:\n";
     botUrlList.forEach((item, index) => {
       botOptions += `${index + 1}. ${item.bot}\n`;
     });
@@ -107,6 +107,7 @@ export class Core {
       const authUrl = webView.url;
       console.log("WebView URL:", authUrl);
       console.log("TG Web App Data : " + Helper.getTelegramQuery(authUrl));
+      await this.client.disconnect();
     } catch (error) {
       console.error("Error during process execution:", error);
       throw error;

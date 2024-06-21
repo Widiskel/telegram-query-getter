@@ -1,16 +1,40 @@
 import { TelegramClient } from "telegram";
-import { StoreSession, StringSession } from "telegram/sessions";
-import dotenv from "dotenv";
+import { StoreSession } from "telegram/sessions";
 import input from "input"; // npm i input
 import { Config } from "./config";
 import { Core } from "./processor/core";
+import { Helper } from "./utils/helper";
 
-dotenv.config();
+let storeSession;
 
-const storeSession = new StoreSession("sessions");
+async function onBoarding() {
+  const choice = await input.text(
+    "Welcome to Telegram Query Getter \nBy : Widiskel \n \nLets getting started. \n1. Create Session. \n2. Reset Sessions \n3. Get Query \n \nInput your choice :"
+  );
+  if (choice == 1) {
+    if (Helper.getSession()?.length != 0) {
+      console.info(
+        "You already have sessions created, please reset your sessions first"
+      );
+      await onBoarding();
+    }
+  } else if (choice == 2) {
+    Helper.resetSession();
+    await onBoarding();
+  } else if (choice == 3) {
+    if (Helper.getSession()?.length == 0) {
+      console.info("You don't have any sessions, please create first");
+      await onBoarding();
+    }
+  } else {
+    throw Error("Invalid input");
+  }
+}
 
 (async () => {
   try {
+    await onBoarding();
+    storeSession = new StoreSession("sessions");
     const client = new TelegramClient(
       storeSession,
       Config.TELEGRAM_APP_ID,
@@ -20,13 +44,11 @@ const storeSession = new StoreSession("sessions");
       }
     );
 
-    // console.log(client);
-
     await client.start({
       phoneNumber: async () =>
         await input.text("Enter your Telegram Phone Number ?"),
       password: async () => await input.text("Enter your Telegram Password?"),
-      phoneCode: async (tr) =>
+      phoneCode: async () =>
         await input.text("Enter your Telegram Verification Code ?"),
       onError: (err) => console.log(err),
     });

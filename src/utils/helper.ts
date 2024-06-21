@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 export class Helper {
   static sleep = (ms: number): Promise<void> => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -20,5 +23,31 @@ export class Helper {
     }
 
     return param;
+  }
+
+  static getSession() {
+    try {
+      const files = fs.readdirSync(path.resolve("sessions"));
+      const session: string[] = [];
+      files.forEach((file) => {
+        session.push(file);
+      });
+      return session;
+    } catch (error) {
+      throw Error(`Error reading sessions directory: ${error},`);
+    }
+  }
+
+  static resetSession() {
+    try {
+      const files = fs.readdirSync(path.resolve("sessions"));
+      console.log("Deleting Sessions...");
+      files.forEach((file) => {
+        fs.unlinkSync(path.join(path.resolve("sessions"), file));
+      });
+      console.info("Sessions reset successfully");
+    } catch (error) {
+      throw Error(`Error deleting session files: ${error},`);
+    }
   }
 }
