@@ -1,6 +1,6 @@
 # TELEGRAM QUERY GETTER
 
-Telegram web apps query getter
+Telegram web apps query getter, to get query data provided by telegram when authenticating to Telegram Web Apps.
 
 ## Prerequisite
 
@@ -10,7 +10,7 @@ Telegram web apps query getter
 ## What you need to use this ?
 
 - TELEGRAM_APP_ID & TELEGRAM_APP_HASH Get it from [Here](https://my.telegram.org/auth?to=apps)
-- Telegram Bot Username & Telegram Web Apps Url (Or you can use provided list) 
+- Telegram Bot Username & Telegram Web Apps Url (Or you can use provided list)
 
 ## Configure
 
