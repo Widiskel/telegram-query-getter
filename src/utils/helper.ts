@@ -11,7 +11,9 @@ export class Helper {
 
     const queryString = url.substring(hashIndex + 1);
     const decodedQueryString = queryString.split("&");
-    const param = decodedQueryString[0].split("&");
+    const param = decodedQueryString[0]
+      .split("&")[0]
+      .replace("tgWebAppData=", "");
 
     if (!param) {
       throw new Error("Param not found in the query string.");

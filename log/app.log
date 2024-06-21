@@ -262,3 +262,63 @@ Error: Your API ID or Hash cannot be empty or undefined
     at /Users/widiskel/Project/telegram-query-getter/dist/index.js:23:8
     at Object.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/index.js:38:4)
     at Module._compile (node:internal/modules/cjs/loader:1480:14)
+2024-06-21 13:40:53 [[31merror[39m]: unhandledRejection: Cannot cast () => __awaiter(this, void 0, void 0, function* () { return yield input_1.default.text("Enter bot username you want to connect ?"); }) to any kind of peer
+Error: Cannot cast () => __awaiter(this, void 0, void 0, function* () { return yield input_1.default.text("Enter bot username you want to connect ?"); }) to any kind of peer
+    at _raiseCastFail (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/Utils.js:84:11)
+    at Object.getPeer (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/Utils.js:987:5)
+    at Object.getInputEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/users.js:281:22)
+    at TelegramClient.getInputEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:994:28)
+    at Object.getEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/users.js:158:38)
+    at TelegramClient.getEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:957:28)
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:29:51)
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:8:71
+    at new Promise (<anonymous>)
+2024-06-21 13:40:53 [[31merror[39m]: unhandledRejection: Cannot cast () => __awaiter(this, void 0, void 0, function* () { return yield input_1.default.text("Enter bot username you want to connect ?"); }) to any kind of peer
+Error: Cannot cast () => __awaiter(this, void 0, void 0, function* () { return yield input_1.default.text("Enter bot username you want to connect ?"); }) to any kind of peer
+    at _raiseCastFail (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/Utils.js:84:11)
+    at Object.getPeer (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/Utils.js:987:5)
+    at Object.getInputEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/users.js:281:22)
+    at TelegramClient.getInputEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:994:28)
+    at Object.getEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/users.js:158:38)
+    at TelegramClient.getEntity (/Users/widiskel/Project/telegram-query-getter/node_modules/telegram/client/TelegramClient.js:957:28)
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:29:51)
+    at Generator.next (<anonymous>)
+    at /Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:8:71
+    at new Promise (<anonymous>)
+2024-06-21 13:55:47 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:92:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:55:47 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:92:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:56:17 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:93:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:56:17 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:93:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:57:03 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:93:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-21 13:57:03 [[31merror[39m]: unhandledRejection: You need to set Bot Username and Bot Web Apps URL
+Error: You need to set Bot Username and Bot Web Apps URL
+    at Core.<anonymous> (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:93:27)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/widiskel/Project/telegram-query-getter/dist/processor/core.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
