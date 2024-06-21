@@ -122,6 +122,7 @@ export class Core {
       logger.info(`Session ${this.session} Data - ${tgData}`);
       logger.info(`Session ${this.session} - Complete`);
       await this.client.disconnect();
+      logger.info(`BOT FINISH`);
     } catch (error) {
       console.error("Error during process execution:", error);
       throw error;

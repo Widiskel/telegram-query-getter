@@ -103,5 +103,6 @@ async function onBoarding() {
   } catch (error) {
     console.log(error);
     logger.error(`Session ${sessionName} Error - ${error}`);
+    logger.info(`BOT STOPPED`);
   }
 })();
