@@ -6,23 +6,24 @@ import { Core } from "./processor/core";
 import { Helper } from "./utils/helper";
 
 let storeSession;
+let sessionName: string;
 
 async function onBoarding() {
   const choice = await input.text(
     "Welcome to Telegram Query Getter \nBy : Widiskel \n \nLets getting started. \n1. Create Session. \n2. Reset Sessions \n3. Get Query \n \nInput your choice :"
   );
   if (choice == 1) {
-    if (Helper.getSession()?.length != 0) {
+    if (Helper.getSession(sessionName)?.length != 0) {
       console.info(
         "You already have sessions created, please reset your sessions first"
       );
       await onBoarding();
     }
   } else if (choice == 2) {
-    Helper.resetSession();
+    Helper.resetSession(sessionName);
     await onBoarding();
   } else if (choice == 3) {
-    if (Helper.getSession()?.length == 0) {
+    if (Helper.getSession(sessionName)?.length == 0) {
       console.info("You don't have any sessions, please create first");
       await onBoarding();
     }
@@ -33,8 +34,9 @@ async function onBoarding() {
 
 (async () => {
   try {
+    sessionName = "sessions2";
     await onBoarding();
-    storeSession = new StoreSession("sessions");
+    storeSession = new StoreSession(sessionName);
     const client = new TelegramClient(
       storeSession,
       Config.TELEGRAM_APP_ID,

@@ -25,9 +25,9 @@ export class Helper {
     return param;
   }
 
-  static getSession() {
+  static getSession(sessionName: string) {
     try {
-      const files = fs.readdirSync(path.resolve("sessions"));
+      const files = fs.readdirSync(path.resolve(sessionName));
       const session: string[] = [];
       files.forEach((file) => {
         session.push(file);
@@ -38,9 +38,9 @@ export class Helper {
     }
   }
 
-  static resetSession() {
+  static resetSession(sessionName: string) {
     try {
-      const files = fs.readdirSync(path.resolve("sessions"));
+      const files = fs.readdirSync(path.resolve(sessionName));
       console.log("Deleting Sessions...");
       files.forEach((file) => {
         fs.unlinkSync(path.join(path.resolve("sessions"), file));
