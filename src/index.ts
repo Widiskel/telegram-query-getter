@@ -20,7 +20,7 @@ const storeSession = new StoreSession("sessions");
       }
     );
 
-    console.log(client);
+    // console.log(client);
 
     await client.start({
       phoneNumber: async () =>

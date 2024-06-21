@@ -8,7 +8,7 @@ import { botUrlList } from "../utils/bot_url_list";
 
 export class Core {
   client: TelegramClient;
-  peer: EntityLike | Entity | undefined;
+  peer: EntityLike | Entity | any;
   bot: any;
   url: any;
 
@@ -85,11 +85,15 @@ export class Core {
       }
 
       const user = await this.client.getMe();
-      console.log("User:", user);
+      console.log("USER INFO");
+      console.log("Username : " + user.username);
+      console.log("Phone    : " + user.phone);
+      console.log();
 
       await this.resolvePeer();
-      // console.log("Resolved Peer:", this.peer);
-
+      console.log("PEER INFO");
+      console.log(`BOT    :  ${this.peer ? this.peer.username : "??"}`);
+      console.log();
       const webView = await this.client.invoke(
         new Api.messages.RequestWebView({
           peer: this.peer,

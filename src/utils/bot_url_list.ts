@@ -9,4 +9,9 @@ export const botUrlList = [
     bot: "metaboss_2024_bot",
     url: "http://apiv2.metaboss.xyz:2000/game",
   },
+  //BLUM
+  {
+    bot: "BlumCryptoBot",
+    url: "https://gateway.blum.codes/",
+  },
 ];
