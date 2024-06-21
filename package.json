@@ -1,0 +1,26 @@
+{
+  "name": "telegram-query-getter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "telegram-query-getter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.14.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "input": "^1.0.1",
+    "telegram": "^2.22.2",
+    "winston": "^3.13.0"
+  }
+}
