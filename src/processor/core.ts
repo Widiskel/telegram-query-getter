@@ -12,6 +12,7 @@ export class Core {
   peer: EntityLike | Entity | any;
   bot: any;
   url: any;
+  user: any;
 
   constructor(client: TelegramClient, session: string) {
     this.client = client;
@@ -77,6 +78,8 @@ export class Core {
   async process() {
     try {
       logger.info(`Session ${this.session} - Processing`);
+      this.user = await this.client.getMe();
+      console.log("User Phone : " + this.user.phone);
       if (await this.mode()) {
         this.bot = await input.text("Enter bot username you want to connect ?");
         this.url = await input.text(
